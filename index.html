@@ -8,6 +8,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+html, body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 body, html {
   height: 100%;
@@ -27,7 +38,7 @@ body, html {
 }
 .video-container {
   position: relative;
-  width: 120px;
+  width:auto;
   margin: auto; /* Centers the video container */
 }
 
@@ -45,11 +56,11 @@ body, html {
 }
 
 .left-overlay {
-  left: 0;
+  left: 20;
 }
 
 .right-overlay {
-  right: 0;
+  right: 70;
 }
 
 .barcode {
@@ -117,7 +128,7 @@ body, html {
     <div class="video-overlay right-overlay"></div>
     <img src="your-barcode-image.png" alt="Barcode" class="barcode">
     <video controls>
-      <source src="your-video.mp4" type="video/mp4">
+      <source src="Base2Vid2.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
