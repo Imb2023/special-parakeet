@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -159,7 +161,29 @@ body, html {
     </div>
   </div>
 </div>
+<input type="password" id="password" placeholder="Enter password">
+<button onclick="decryptContent()">View Content</button>
+<div id="content"></div>
 
+<script src="encryp.js"></script>
+<script>
+    function decryptContent() {
+        const password = document.getElementById('password').value;
+        try {
+            const bytes = CryptoJS.AES.decrypt(encryptedContent, password);
+            const originalText = bytes.toString(CryptoJS.enc.Utf8);
+            
+            if (originalText) { // Decryption was successful
+                document.getElementById('content').innerHTML = originalText;
+            } else {
+                alert('Wrong password!');
+            }
+        } catch (e) {
+            alert('Wrong password!');
+        }
+    }
+    
+  </script>
 <!-- Promo Section - "We know design" -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
   <div class="w3-row-padding">
