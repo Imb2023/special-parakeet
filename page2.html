@@ -35,10 +35,17 @@ html, body {
 </head>
 
 <body>
-    <video autoplay muted loop id="fullscreenVideo">
-      <source src="Base2Vid2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div id="status">Waiting for action...</div>
+    <script>
+        const channel = new BroadcastChannel('actionChannel');
+
+        channel.onmessage = function(event) {
+            if (event.data === 'startAction') {
+                document.getElementById('status').innerText = 'Action Started!';
+                // Here you can add more actions, like fetching data, updating other elements, etc.
+            }
+        };
+    </script>
 </body>
 
 </html>
